@@ -1,7 +1,10 @@
+
 public abstract class Map {
 
-    public void createTile(){}
+    public abstract Tile createTile();
 
-    public void display(){}
+    public void display(){
+
+    }
 
 }

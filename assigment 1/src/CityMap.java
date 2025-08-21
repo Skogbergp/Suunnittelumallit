@@ -1,12 +1,13 @@
 public class CityMap extends Map{
-    @Override
-    public void createTile() {
-
-    }
 
     @Override
-    public void display() {
-        // Implementation for displaying the city map
-        System.out.println("Displaying the city map.");
+    public Tile createTile() {
+        switch((int) (Math.random() * 3)){
+            case 0: return new RoadTile();
+            case 1: return new ForestTile();
+            case 2: return new BuildingTile();
+            default: return null;
+        }
+
     }
 }

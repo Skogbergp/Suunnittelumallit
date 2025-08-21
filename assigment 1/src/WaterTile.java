@@ -1,12 +1,11 @@
-public class SwampTile implements Tile {
+public class WaterTile implements Tile{
     @Override
     public char getCharacter() {
-        return 'S';
+        return 'W';
     }
 
     @Override
     public String getType() {
-        return "swamp";
+        return "Water";
     }
-
 }

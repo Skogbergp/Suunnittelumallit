@@ -1,6 +1,5 @@
 public interface Tile {
 
-    public void getCharacter();
-    public void getDescription();
-    public void action();
+    public char getCharacter();
+    public String getType();
 }
