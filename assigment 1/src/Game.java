@@ -3,14 +3,22 @@ import java.util.Scanner;
 public class Game {
     private Map map;
 
-    public void CreateWildernessMap(){
-        map = new WildernessMap();
-    }
-
-    public void createCityMap(){
-         map = new CityMap();
+    public void createMap(int choice){
+        if (choice == 1) {
+            System.out.println("Wilderness Map selected.");
+            map = new WildernessMap();
+        } else if (choice == 2) {
+            System.out.println("City Map selected.");
+            map = new CityMap();
+        } else {
+            System.out.println("Invalid choice. Please select 1 or 2.");
+        }
     }
     public void start(){
+        if (map == null) {
+            System.out.println("Map not created. Please create a map first.");
+            return;
+        }
         map.createTile();
         map.display();
 
@@ -19,28 +27,16 @@ public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
+
         while (true){
+            Game game = new Game();
             System.out.println("Choose map type:");
             System.out.println("1. Wilderness Map");
             System.out.println("2. City Map");
             System.out.print("Enter your choice (1 or 2): ");
-            String choice = sc.nextLine();
-
-            if (choice.equals("1")) {
-                System.out.println("Wilderness Map selected.");
-                Game game = new Game();
-                game.CreateWildernessMap();
-                game.start();
-
-            } else if (choice.equals("2")) {
-                System.out.println("City Map selected.");
-                Game game = new Game();
-                game.createCityMap();
-                game.start();
-
-            } else {
-                System.out.println("Invalid choice. Please enter 1 or 2.");
-            }
+            int choice = Integer.parseInt(sc.nextLine());
+            game.createMap(choice);
+            game.start();
         }
 
 }
