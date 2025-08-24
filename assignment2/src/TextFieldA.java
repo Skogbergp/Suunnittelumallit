@@ -11,5 +11,6 @@ public class TextFieldA extends TextField {
         for (int i = 0; i < len + 4; i++) {
             System.out.print(border);
         }
+        System.out.println();
     }
 }

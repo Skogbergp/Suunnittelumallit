@@ -11,5 +11,6 @@ public class ButtonA extends Button {
         for (int i = 0; i < len + 4; i++) {
             System.out.print(border);
         }
+        System.out.println();
     }
 }
