@@ -11,12 +11,19 @@ public class Organization {
     }
     public void removeEmployee(Employee employee){
         for(Department e : departments) {
+            for (Department d : e.getDepartments()) {
+                if (d.isEmployee(employee)) {
+                    d.removeEmployee(employee);
+                }
+            }
             if(e.isEmployee(employee)){
-                departments.remove(e);
-                employees.remove(employee);
+                e.removeEmployee(employee);
+
             }
 
+
         }
+        employees.remove(employee);
     }
 
     public void removeDepartment(Department department){
@@ -24,10 +31,12 @@ public class Organization {
     }
 
     public void printOrganization(){
-        System.out.println("<Organization>");
-        for(Department d : departments){
-            System.out.println(d.printDepartment());
+        StringBuilder sb = new StringBuilder();
+        sb.append("<Organization>\n");
+        for (Department d : departments) {
+            sb.append(d.printDepartment("    "));
         }
-        System.out.println("</Organization>");
+        sb.append("</Organization>\n");
+        System.out.println(sb.toString());
     }
 }

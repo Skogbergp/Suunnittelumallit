@@ -1,9 +1,12 @@
+import javax.xml.stream.XMLOutputFactory;
 import java.util.ArrayList;
+
 
 public class Department {
     private String name;
     private ArrayList<Employee> employees = new ArrayList<>();
     private ArrayList<Department> departments = new ArrayList<>();
+    private XMLOutputFactory xmlOutputFactory = XMLOutputFactory.newFactory();
 
     public Department(String name) {
         this.name = name;
@@ -30,7 +33,7 @@ public class Department {
            return false;
        }
        for(Employee e : employees){
-           if(e.equals(employee)){
+           if(e.equals(employee)) {
                return true;
            }
        }
@@ -39,15 +42,22 @@ public class Department {
    public void removeEmployee(Employee employee){
        employees.remove(employee);
    }
-   public String printDepartment() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("\t<Department>\n\t\t<Name>" + name + "</Name>\n\t\t<Employees>\n");
-        for (Employee e : employees) {
-            sb.append("\t\t\t<Employee>\n" +
-                    "\t\t\t\t<Name>"+e.getName()+"</Name>\n" +
-                    "\t\t\t\t<Salary>"+e.getSalary()+"</Salary>\n");
-        }
-        sb.append("\t\t\t</Employees>\n\t</Department>");
-        return sb.toString();
+   public String printDepartment(String indent) {
+       StringBuilder sb = new StringBuilder();
+       sb.append(indent).append("<Department>\n");
+       sb.append(indent).append("    <Name>").append(name).append("</Name>\n");
+
+       sb.append(indent).append("    <Employees>\n");
+       for (Employee e : employees) {
+           sb.append(e.printEmployee(indent + "        "));
+       }
+       sb.append(indent).append("    </Employees>\n");
+
+       for (Department subDept : departments) {
+           sb.append(subDept.printDepartment(indent + "    "));
+       }
+
+       sb.append(indent).append("</Department>\n");
+       return sb.toString();
    }
 }

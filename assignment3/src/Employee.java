@@ -14,4 +14,11 @@ public class Employee {
     public int getSalary() {
         return salary;
     }
+
+    public String printEmployee(String indent) {
+        return indent + "<Employee>\n" +
+                indent + "    <Name>" + name + "</Name>\n" +
+                indent + "    <Salary>" + salary + "</Salary>\n" +
+                indent + "</Employee>\n";
+    }
 }
