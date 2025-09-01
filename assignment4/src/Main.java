@@ -12,15 +12,6 @@ public class Main {
         Thread t = new Thread(weatherStation);
         t.start();
 
-        while(true){
-            System.out.println("hello");
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
 
     }
 }
