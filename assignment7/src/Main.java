@@ -3,7 +3,9 @@ import java.util.Scanner;
 public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Character hero = new Character("Hero");
+        System.out.println("Name your character: ");
+
+        Character hero = new Character(scanner.nextLine());
 
         System.out.println("Welcome, " + hero.getName() + "! Your journey begins now.");
         
