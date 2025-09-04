@@ -3,11 +3,16 @@ public class Main {
         Printer printer;
         Printer printer2;
 
+        Printer DecryptPrinter;
+
         printer = new BasicPrinter();
         printer.print("Hello World");
 
         printer2 = new EncryptedPrinter(new XMLPrinter(new BasicPrinter()));
         printer2.print("Hello World");
+
+        DecryptPrinter = new DecryptPrinter(new EncryptedPrinter(new XMLPrinter(new BasicPrinter())));
+        DecryptPrinter.print("Hello World");
 
     }
 }

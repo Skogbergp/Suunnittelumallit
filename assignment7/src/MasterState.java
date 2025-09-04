@@ -1,5 +1,6 @@
 public class MasterState implements State{
 
+
     @Override
     public void train(Character character) {
         System.out.println(character.getName() + " is thoo strong to train");

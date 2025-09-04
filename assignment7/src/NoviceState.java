@@ -1,7 +1,5 @@
 public class NoviceState implements State{
 
-    
-
     @Override
     public void train(Character character) {
         character.gainExperience(50);
