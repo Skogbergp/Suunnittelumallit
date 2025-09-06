@@ -6,7 +6,7 @@ public class EncryptedPrinter extends PrinterDecorator {
     }
 
     public void print(String text) {
-        super.print(CaesarCipher(text,1));
+        super.print(CaesarCipher(text,4));
 
     }
     public String CaesarCipher(String text,int shift) {
