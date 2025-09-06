@@ -35,7 +35,7 @@ public class DefenseState implements State {
     @Override
     public void defend(Player player, int damage, Player attacker) {
         int reducedDamage = damage / 2; // Reduce damage by 50%
-        int counterDamage = (int)(player.getAttackPower() / 1.5); // Counterattack damage is 66% of attack power
+        int counterDamage = (int)(player.getAttackPower() *1.3); // Counterattack damage is 130% of attack power
         System.out.println(player.getName() + " braces for impact in Defense Stance, reducing incoming damage from " + damage + " to " + reducedDamage + ".");
         if(Math.random() < counterChance) { // 20% chance to counterattack
 
@@ -43,9 +43,13 @@ public class DefenseState implements State {
             attacker.takeDamage(counterDamage);
             System.out.println(attacker.getName() + " takes " + counterDamage + " damage from the counterattack.");
             counterChance = 0.20; // Reset counter chance after a successful counter
-            player.takeDamage(reducedDamage);
         }
         counterChance += 0.05; // Increase counter chance by 5% each time defending and not countering
         player.takeDamage(reducedDamage);
+    }
+
+    @Override
+    public String getName() {
+        return "Defense Stance";
     }
 }

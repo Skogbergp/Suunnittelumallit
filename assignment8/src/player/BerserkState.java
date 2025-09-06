@@ -70,5 +70,10 @@ public class BerserkState implements State {
 
     }
 
+    @Override
+    public String getName() {
+        return "Berserker Stance";
+    }
+
 
 }

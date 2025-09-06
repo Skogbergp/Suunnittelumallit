@@ -115,7 +115,7 @@ public class Player {
         System.out.println("Health: " + currentHealth + "/" + maxHealth);
         System.out.println("Attack Power: " + attackPower);
         if (currentState != null) {
-            System.out.println("Current State: " + currentState.getClass().getSimpleName());
+            System.out.println("Current State: " + currentState.getName());
         } else {
             System.out.println("Current State: None");
         }

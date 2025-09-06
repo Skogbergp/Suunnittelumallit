@@ -4,8 +4,8 @@ public class NormalState implements State {
 
     @Override
     public void train(Player player) {
-        System.out.println(player.getName() + " trains steadily, building strength and gaining 50 experience points.");
-        player.gainExperience(50);
+        System.out.println(player.getName() + " trains steadily, building strength and gaining 80 experience points.");
+        player.gainExperience(80);
     }
 
     @Override
@@ -32,7 +32,11 @@ public class NormalState implements State {
 
     @Override
     public void defend(Player player, int damage , Player enemyPlayer) {
-        System.out.println(player.getName() + " stands firm in Normal Stance, absorbing the full impact of " + damage + " damage.");
-        player.takeDamage(damage);
+        int reducedDamage = (int) (damage *0.8); //reduced damage taken by 20%
+        System.out.println(player.getName() + " stands firm in Normal Stance, absorbing the full impact of " + reducedDamage + " damage.");
+        player.takeDamage(reducedDamage);
+    }
+    public String getName(){
+        return "Neutral Stance";
     }
 }
