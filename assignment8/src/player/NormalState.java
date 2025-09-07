@@ -24,7 +24,7 @@ public class NormalState implements State {
         int totalDamage = baseDamage + variation;
 
         System.out.println(player.getName() + " engages " + enemy.getName() + " in combat with balanced force.");
-        System.out.println(player.getName() + " is in Normal Stance: Delivering a standard attack with power " + totalDamage + ".");
+        System.out.println(player.getName() + " is in Neutral Stance: Delivering a standard attack with power " + totalDamage + ".");
         enemy.defend(totalDamage,player);
         System.out.println(player.getName() + " gains 20 experience points for the effort.");
         player.gainExperience(40);
@@ -33,7 +33,7 @@ public class NormalState implements State {
     @Override
     public void defend(Player player, int damage , Player enemyPlayer) {
         int reducedDamage = (int) (damage *0.8); //reduced damage taken by 20%
-        System.out.println(player.getName() + " stands firm in Normal Stance, absorbing the full impact of " + reducedDamage + " damage.");
+        System.out.println(player.getName() + " stands firm in Neutral Stance, absorbing the full impact of " + reducedDamage + " damage.");
         player.takeDamage(reducedDamage);
     }
     public String getName(){

@@ -35,6 +35,7 @@ public class FightGame extends Game {
     @Override
     public void playSingleTurn(int player) {
         Player currentPlayer = players.get(player); // get current player
+        boolean validAction = false;
         int actionPoints = 2;
         while (actionPoints > 0) {
 
@@ -43,15 +44,17 @@ public class FightGame extends Game {
             System.out.println("Choose an action: 1. Train 2. Meditate 3. Fight 4. Change Stance");
             System.out.println("Each action costs 1 action point.");
             System.out.println();
-            try {
+            if (sc.hasNextInt()) {
                 int choice = sc.nextInt();
 
                 switch (choice) {
                     case 1:
                         currentPlayer.train();
+                        validAction = true;
                         break;
                     case 2:
                         currentPlayer.meditate();
+                        validAction = true;
                         break;
                     case 3:
                         Player opponent = selectOpponent(player);
@@ -61,18 +64,21 @@ public class FightGame extends Game {
                             players.remove(opponent);
                             currentPlayer.incrementPlayersDefeated();
                         }
+                        validAction = true;
                         break;
                     case 4:
-                        changeStance(currentPlayer);
+                        validAction = changeStance(currentPlayer);
                         break;
                     default:
                         System.out.println("Invalid choice. Try again.");
-                        actionPoints++; // don't count invalid action
+                        break;
 
                 }
-                actionPoints--;
-
-            } catch (Exception e) {
+                if (validAction) {
+                    actionPoints--;
+                    validAction = false;
+                }
+            } else {
                 System.out.println("Invalid input. Please enter a valid number.");
                 sc.next(); // clear the invalid input
             }
@@ -95,51 +101,65 @@ public class FightGame extends Game {
         }
         while (true) {
             System.out.println("Select an opponent to fight:");
-        for (int i = 0; i < opponents.size(); i++) {
-            System.out.println((i + 1) + ". " + opponents.get(i).getName());
-        }
+            for (int i = 0; i < opponents.size(); i++) {
+                System.out.println((i + 1) + ". " + opponents.get(i).getName());
+            }
 
-            try {
-
-
+            if (sc.hasNextInt()) {
                 int selection = sc.nextInt() - 1;
                 if (selection >= 0 && selection < opponents.size()) {
                     return opponents.get(selection);
+                }else  {
+                    System.out.println("Invalid selection. Try again.");
                 }
-            } catch (Exception e) {
-                System.out.println("Invalid input. Please enter a valid number.");
+
+            } else {
+                System.out.println("Invalid input. Try again.");
                 sc.next(); // clear the invalid input
             }
 
         }
     }
 
-    public void changeStance(Player player) {
+    public boolean changeStance(Player player) {
         while (true) {
-            try {
-                System.out.println("Choose a stance: 1. Normal 2. Defense 3. Berserk");
+
+            System.out.println("Choose a stance: 1. Normal 2. Defense 3. Berserk");
+            if (sc.hasNextInt()) {
                 int stanceChoice = sc.nextInt();
                 switch (stanceChoice) {
                     case 1:
+                        if (player.getCurrentState().getName().equals("Neutral Stance")) {
+                            System.out.println("You are already in Neutral stance.");
+                            return false;
+                        }
                         player.setCurrentState(new NormalState());
-                        System.out.println(player.getName() + " switched to Normal stance.");
-                        break;
+                        System.out.println(player.getName() + " switched to Neutral stance.");
+                        return true;
                     case 2:
+                        if (player.getCurrentState().getName().equals("Defense Stance")) {
+                            System.out.println("You are already in Defense stance.");
+                            return false;
+                        }
                         player.setCurrentState(new DefenseState());
                         System.out.println(player.getName() + " switched to Defense stance.");
-                        break;
+                        return true;
                     case 3:
+                        if (player.getCurrentState().getName().equals("Berserk Stance")) {
+                            System.out.println("You are already in Berserk stance.");
+                            return false;
+                        }
                         player.setCurrentState(new BerserkState());
                         System.out.println(player.getName() + " switched to Berserk stance.");
-                        break;
+                        return true;
                     default:
                         System.out.println("Invalid choice. Stance not changed.");
                 }
-            }catch (Exception e) {
+            } else {
                 System.out.println("Invalid input. Please enter a valid number.");
                 sc.next(); // clear the invalid input
-                continue;
             }
+
         }
     }
 }
