@@ -199,4 +199,7 @@ I am not stuck in an infinite loop, you are just too impatient. Keep shuffling..
 Just keep shuffling, just keep shuffling...
 Did Space X finally colonize Mars or are we still shuffling?
 So did Ukraine finally win the war or are we still shuffling?
-
+Wait a minute, is this array even supposed to be sorted?
+Fairy stole my sorting algorithm, now I have to use BogoSort
+Fairy stole my name, now I have to go by BogoSort
+So did Canada add new things to the list of banned things or are we still shuffling?
