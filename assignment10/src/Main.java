@@ -2,14 +2,36 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        MessageHandler contactHandler = new ContactHandler();
+        MessageHandler general = new GeneralHandler();
+        MessageHandler compensationHandler = new CompensationHandler();
+        MessageHandler suggestionHandler = new SuggestionHandler();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        general.nextHandler = contactHandler;
+        contactHandler.nextHandler = compensationHandler;
+        compensationHandler.nextHandler = suggestionHandler;
+        for (int i = 0; i < 10; i++) {
+            Message msg =  generateMessage();
+            System.out.println("Generated message: " + msg.getMessage() + " of type: " + msg.getType());
+            general.handle(msg);
+            System.out.println("--------------------------------------------------");
         }
+
+    }
+    public static Message generateMessage(){
+        MessageType types = MessageType.values()[(int)(Math.random()*MessageType.values().length)];
+
+        String msg = "This is a " + types + " message.";
+        String email = generateEmail();
+        return new Message(types, msg, email);
+
+    }
+    public static String generateEmail() {
+        String[] names = {"alice", "bob", "charlie", "dave", "eve"};
+        String[] lastNames = {"smith", "johnson", "williams", "jones", "brown"};
+        String[] domains = {"example.com", "mail.com", "test.org"};
+        String username = names[(int)(Math.random() * names.length)] + "." + lastNames[(int)(Math.random() * lastNames.length)];
+        String domain = domains[(int)(Math.random() * domains.length)];
+        return username + "@" + domain;
     }
 }
