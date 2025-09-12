@@ -41,6 +41,7 @@ public class BogoSort  implements SortStrategy, Runnable {
 
             if (shuffleCount.mod(new BigInteger("10000000")).equals(BigInteger.ZERO)) {
                 System.out.println(messages.get((int)(Math.random() * messages.size())));
+                System.out.println("Shuffle count is: " + shuffleCount);
             }
         }
 
