@@ -180,7 +180,7 @@ Assignment 9 is going to take forever to complete.
 I am starting to think BogoSort was a bad idea.
 So, what season of Salatut elämät did you start watching?
 Joke's on you, I am still shuffling.
-So, is this array longer than the Great Luch queue?
+So, is this array longer than the Great Lunch queue?
 Scrooge McDuck would use BogoSort to sort his money.
 What if BogoSort is actually the most efficient sorting algorithm in a parallel universe?
 What if BogoSort is actually the most efficient sorting algorithm in a parallel universe, and we're just too primitive to understand it?
