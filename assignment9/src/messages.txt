@@ -147,17 +147,10 @@ So, are you in team Gladiator or team Deadlocked?
 Is this your homework, or are you just trying to sort the array?
 I am starting to think you enjoy watching me shuffle.
 Oi mate, you up for a pint while I shuffle this array?
-I bet you 5 pounds this array won't be sorted in your lifetime.
-I bet you 10 pounds this array won't be sorted in the next million shuffles.
-I bet you 20 pounds this array won't be sorted in the next billion shuffles.
-I bet you 50 pounds this array won't be sorted in the next trillion shuffles.
-I bet you 100 pounds this array won't be sorted in the next quadrillion shuffles.
-I bet you 500 pounds this array won't be sorted in the next quintillion shuffles.
-I bet you 1,000 pounds this array won't be sorted in the next sextillion shuffles.
-I bet you 5,000 pounds this array won't be sorted in the next septillion shuffles.
-I bet you 10,000 pounds this array won't be sorted in the next octillion shuffles.
-Oi maamme Suomi synnyinmaa, soi sana kultainen.
-So, does Finnish language actually have three different words for "you"?
+Finns are real, right?
+Finns are not real, right?
+Salmiakki is tasty, right?
+Salmiakki is disgusting, right?
 So, does Finnish actually exist, or is it just a myth?
 I found Atlantis.
 I special summon this array to the field in attack mode.
@@ -201,7 +194,9 @@ Did SpaceX finally colonize Mars, or are we still shuffling?
 So, did Ukraine finally win the war, or are we still shuffling?
 Wait a minute, is this array even supposed to be sorted?
 A Pirates stole my sorting algorithm; now I have to use BogoSort.
-A fairy stole my name; now I have to go by BogoSort.
+Want to do a trade? My BogoSort for your BubbleSort?
+Want to do a trade? My BogoSort for your QuickSort?
+Want to do a trade? My BogoSort for your MergeSort?
 So, did Canada add new things to the list of banned things, or are we still shuffling?
 Is someone threatening you or are you just crazy like me?
 Blink twice if you need saving from Bogosort.

@@ -55,9 +55,13 @@ public class BogoSort  implements SortStrategy, Runnable {
         // Math.random() returns a double positive
         // value, greater than or equal to 0.0 and
         // less than 1.0.
-        for (int i = 0; i < a.length; i++)
-            swap(a, i, (int)(Math.random() * i));
+        for (int i = a.length - 1; i > 0; i--) {
+            int j = (int)(Math.random() * (i + 1)); // any index 0..i
+            swap(a, i, j);
+        }
     }
+
+
 
     // Swapping 2 elements
     void swap(int[] a, int i, int j)
@@ -100,7 +104,8 @@ public class BogoSort  implements SortStrategy, Runnable {
         bogoSortStart(array);
         long endTime = System.nanoTime();
         long timeElapsed = endTime - startTime;
-        System.out.printf("Bogo Sort completed in %,d ns, sorting %,d elements.%n", timeElapsed, array.length);
+        System.out.println("🎉🎉🎉🎊🎊🎊🎉🎉🎉");
+        System.out.printf("Bogo Sort completed in %,d ns (%.3f s), sorting %,d elements.%n", timeElapsed, timeElapsed / 1_000_000_000.0, array.length);
         System.out.printf("Bogo Sort performed %,d shuffles.%n", shuffleCount);
         System.out.println("-----------------------------------" );
     }

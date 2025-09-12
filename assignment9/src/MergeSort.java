@@ -74,7 +74,7 @@ public class MergeSort implements SortStrategy {
         mergeSort(arr, 0, arr.length - 1);
         long endTime = System.nanoTime();
         long timeElapsed = endTime - startTime;
-        System.out.printf("Merge Sort completed in %,d ns, sorting %,d elements.%n", timeElapsed, arr.length);
+        System.out.printf("Merge Sort completed in %,d ns (%.6f s), sorting %,d elements.%n", timeElapsed, timeElapsed / 1_000_000_000.0, arr.length);
         System.out.println("-----------------------------------" );
 
     }

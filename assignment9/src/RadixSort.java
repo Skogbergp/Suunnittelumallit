@@ -11,7 +11,7 @@ class RadixSort implements SortStrategy {
         radixsort(array, array.length);
         long endTime = System.nanoTime();
         long timeElapsed = endTime - startTime;
-        System.out.printf("Radix Sort completed in %,d ns, sorting %,d elements.%n", timeElapsed, array.length);
+        System.out.printf("Radix Sort completed in %,d ns (%.6f s), sorting %,d elements.%n", timeElapsed, timeElapsed / 1_000_000_000.0, array.length);
         System.out.println("-----------------------------------" );
     }
 

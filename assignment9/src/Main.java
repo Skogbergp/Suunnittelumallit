@@ -6,9 +6,13 @@ public class Main {
 
         int[] bogoarr2 = randomArray(10);
         Thread bogo2 = new Thread (new BogoSort("bogo2",bogoarr2));
+
+
+        int[] bogoarr3 = randomArray(20);
+        Thread bogo3 = new Thread (new BogoSort("bog3",bogoarr3));
+        bogo3.start();
         bogo1.start();
         bogo2.start();
-
 
 
 
