@@ -200,6 +200,8 @@ Just keep shuffling, just keep shuffling...
 Did SpaceX finally colonize Mars, or are we still shuffling?
 So, did Ukraine finally win the war, or are we still shuffling?
 Wait a minute, is this array even supposed to be sorted?
-A fairy stole my sorting algorithm; now I have to use BogoSort.
+A Pirates stole my sorting algorithm; now I have to use BogoSort.
 A fairy stole my name; now I have to go by BogoSort.
 So, did Canada add new things to the list of banned things, or are we still shuffling?
+Is someone threatening you or are you just crazy like me?
+Blink twice if you need saving from Bogosort.
