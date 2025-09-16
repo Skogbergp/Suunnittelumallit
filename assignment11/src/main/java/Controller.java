@@ -47,7 +47,7 @@ public class Controller {
     public void redo() {
         if (!undoHistory.isEmpty()) {
             System.out.println("Memento found in undo");
-            IMemento previousState = undoHistory.removeLast();
+            IMemento previousState = undoHistory.remove(undoHistory.size() - 1);
             model.restoreState(previousState);
             gui.updateGui();
         }
