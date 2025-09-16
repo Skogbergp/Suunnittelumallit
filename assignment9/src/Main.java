@@ -2,14 +2,14 @@ public class Main {
     public static void main(String[] args) {
 
         int[] bogoarr1 = randomArray(5);
-       Thread bogo1 = new Thread (new BogoSort("bogo1",bogoarr1));
+       Thread bogo1 = new Thread (new BogoSort("bogo 5",bogoarr1));
 
         int[] bogoarr2 = randomArray(10);
-        Thread bogo2 = new Thread (new BogoSort("bogo2",bogoarr2));
+        Thread bogo2 = new Thread (new BogoSort("bogo 10",bogoarr2));
 
 
         int[] bogoarr3 = randomArray(20);
-        Thread bogo3 = new Thread (new BogoSort("bog3",bogoarr3));
+        Thread bogo3 = new Thread (new BogoSort("bogo 20",bogoarr3));
         bogo3.start();
         bogo1.start();
         bogo2.start();
