@@ -8,4 +8,9 @@ public class User {
     public String getUsername() {
         return this.username;
     }
+
+    @Override
+    public String toString() {
+        return this.username;
+    }
 }
