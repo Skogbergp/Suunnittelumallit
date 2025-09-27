@@ -2,7 +2,7 @@ package map;
 
 import javafx.scene.image.Image;
 
-public class ImageUtil {
+public class TileGraphicFactory  {
 
     static Image forestTile = new Image("ForestTile.png");
     static Image cityTile = new Image("BuildingTile.png");

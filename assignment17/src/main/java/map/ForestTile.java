@@ -7,7 +7,7 @@ public class ForestTile implements Tile{
     private int x;
     private int y;
 
-    Image img = ImageUtil.getForestImage();
+    Image img = TileGraphicFactory .getForestImage();
 
     public ForestTile(int x, int y){
         this.x = x;

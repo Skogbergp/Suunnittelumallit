@@ -10,7 +10,7 @@ public class BuildingTile implements Tile{
 
     Image img;
     public BuildingTile(int x, int y){
-        img = ImageUtil.getCityImage();
+        img = TileGraphicFactory .getCityImage();
         this.x = x;
         this.y = y;
     }

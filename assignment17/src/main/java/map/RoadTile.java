@@ -5,7 +5,7 @@ import javafx.scene.image.Image;
 public class RoadTile  implements Tile {
     private int x;
     private int y;
-    private Image img = ImageUtil.getRoadImage();
+    private Image img = TileGraphicFactory .getRoadImage();
     public RoadTile(int x, int y) {
         this.x = x;
         this.y = y;

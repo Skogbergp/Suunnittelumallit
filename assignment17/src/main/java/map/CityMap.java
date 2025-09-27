@@ -7,6 +7,9 @@ public class CityMap extends Map {
     private int y= 0;
     private int width= 832;
     private int height= 640;
+    int TILE_SIZE = 64;
+    int tilesX = width/TILE_SIZE;
+    int tilesY = height/TILE_SIZE;
 
     public CityMap(Canvas canvas) {
         this.height = (int) canvas.getHeight();
@@ -17,26 +20,23 @@ public class CityMap extends Map {
 
     @Override
     public void createTile(){
-        int tileSize = 64;
-        int tilesX = (int) (width / tileSize);
-        int tilesY = (int) (height / tileSize);
+
+        tiles = new Tile[tilesX][tilesY];
 
         for (int y = 0; y < tilesY; y++) {
             for (int x = 0; x < tilesX; x++) {
-                int px = x * tileSize;
-                int py = y * tileSize;
+                int px = x * TILE_SIZE;
+                int py = y * TILE_SIZE;
 
+                Tile tile;
                 switch ((int) (Math.random() * 3)) {
-                    case 0:
-                        tiles.add(new RoadTile(px, py));
-                        break;
-                    case 1:
-                        tiles.add(new ForestTile(px, py));
-                        break;
-                    case 2:
-                        tiles.add(new BuildingTile(px, py));
-                        break;
+                    case 0: tile = new RoadTile(px, py); break;
+                    case 1: tile = new ForestTile(px, py); break;
+                    case 2: tile = new BuildingTile(px, py); break;
+                    default: tile = new RoadTile(px, py); break;
                 }
+
+                tiles[x][y] = tile;
             }
         }
     }
