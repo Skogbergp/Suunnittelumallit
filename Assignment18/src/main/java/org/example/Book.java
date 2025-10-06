@@ -17,8 +17,7 @@ public class Book implements Cloneable {
     @Override
     public Book clone() {
         try {
-            Book clone = (Book) super.clone();
-            return clone;
+            return (Book) super.clone();
         } catch (CloneNotSupportedException e) {
             throw new AssertionError();
         }
@@ -37,6 +36,16 @@ public class Book implements Cloneable {
 
     public void setAuthor(String author) {
         this.author = author;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", genre='" + genre + '\'' +
+                ", publicationYear=" + publicationYear +
+                '}';
     }
 
     public String getGenre() {

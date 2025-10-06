@@ -5,15 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.example</groupId>
-        <artifactId>Suunnittelumallit</artifactId>
+        <artifactId>Assignment18</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>Assignment18</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>assignment19</module>
-    </modules>
+    <artifactId>assignment19</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>

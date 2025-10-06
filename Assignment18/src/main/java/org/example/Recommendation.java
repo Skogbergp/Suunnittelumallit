@@ -41,16 +41,17 @@ public class Recommendation implements Cloneable{
     @Override
     public Recommendation clone() {
         try {
-            Recommendation cloned = (Recommendation) super.clone();
-            cloned.books = new ArrayList<>();
-            for (Book book : this.books) {
-                cloned.books.add(book.clone());
+            Recommendation copy = (Recommendation) super.clone();
+            copy.books = new ArrayList<>(books.size());
+            for (Book b : this.books) {
+                copy.books.add(b.clone()); // DEEP copy of each Book
             }
-            return cloned;
+            return copy;
         } catch (CloneNotSupportedException e) {
-            throw new RuntimeException("Clone failed", e);
+            throw new AssertionError(e);
         }
     }
+
 
     @Override
     public String toString() {
