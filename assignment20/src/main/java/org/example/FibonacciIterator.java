@@ -3,18 +3,7 @@ package org.example;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/**
- * Iterator over Fibonacci numbers starting 1, 1, 2, 3, 5, ...
- *
- * Implementation notes:
- * - Internal state: 'prev' and 'curr' encode the last two numbers.
- * - We start from (prev=0, curr=1) so that the first call to next() returns 1.
- * - For bounded mode, 'remaining' tracks how many values are left.
- * - For unbounded mode, hasNext() is always true (client must stop).
- *
- * Overflow: Using int keeps things simple for the assignment. In a real app,
- * prefer long or BigInteger once you need larger ranges.
- */
+
 public class FibonacciIterator implements Iterator<Integer> {
     private int prev = 0;
     private int curr = 1;
